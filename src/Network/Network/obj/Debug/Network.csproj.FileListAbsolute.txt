@@ -1,0 +1,17 @@
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\bin\Debug\Network.dll
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\bin\Debug\Network.pdb
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\bin\Debug\Network.pri
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\Network.csprojResolveAssemblyReference.cache
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\Network.dll
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\Network.pdb
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\priconfig.xml
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\priconfig.xml.intermediate
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\layout.resfiles
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\layout.resfiles.intermediate
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\resources.resfiles
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\resources.resfiles.intermediate
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\pri.resfiles
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\pri.resfiles.intermediate
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\qualifiers.txt
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\qualifiers.txt.intermediate
+c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\MultipleQualifiersPerDimensionFound.txt
