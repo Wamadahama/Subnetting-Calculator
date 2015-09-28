@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Network
 {
-    class FullNetwork
+    public class FullNetwork
     {
         public List<Subnetwork> Subnets { get; set; }
     }

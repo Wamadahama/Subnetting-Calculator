@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Network
 {
-    class Subnetwork
+    public class Subnetwork
     {
         public List<IpAddress> Addresses { get; set; }
+        public int AddressRange { get; set; }
+
     }
 }

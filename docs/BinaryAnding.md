@@ -1,4 +1,6 @@
-<strong>Story: </strong>Binary anding calculator 
+<strong>Story: </strong>Binary anding calculator
+
+State of the story: Done
 
 Description of story:
 <p>
@@ -8,15 +10,15 @@ Description of story:
 
 		Network address  = 192.168.5.35
 		Subnet mask = 255.255.255.224
-		192.168.5.34 && 255.255.255.224 = 192.168.5.32 
+		192.168.5.34 && 255.255.255.224 = 192.168.5.32
 </p>
 
-This is the only code that I currently have stuff for, it can be found on the windows store under the name of binary anding. I need to take this code and move it to the current application that I am working on. 
+This is the only code that I currently have stuff for, it can be found on the windows store under the name of binary anding. I need to take this code and move it to the current application that I am working on.
 
 <h4>Story points </h4>
 <ul>
-	<li>Classify how the anding works so it can be p</li>
-	<li>Make the user interface scalable so it works well on all platforms</li>
-	<li>Follow the IPO process</li>
-	<li>Test the anding</li>	
+	<li><strike>Classify how the anding works</strike></li>
+	<li><strike>Make the user interface scalable so it works well on all platforms</strike></li>
+	<li><strike>Follow the IPO process</strike></li>
+	<li>Test the anding</li>
 </ul>

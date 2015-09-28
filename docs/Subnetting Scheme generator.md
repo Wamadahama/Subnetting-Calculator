@@ -1,15 +1,17 @@
 <strong>Story: </strong>Subnetting scheme generator
 
-This will be used to determine a collection of information that is used in subnetting. 
+Status: In the works
+
+This will be used to determine a collection of information that is used in subnetting.
 
 
-This will take the following information: 
-- Address class 
-- Number of subnets needed 
+This will take the following information:
+- Address class
+- Number of subnets needed
 - Number of hosts needed per subnet
 
-With this information it will determine the following, this is recomended configurations: 
-- Subnet mask 
+With this information it will determine the following, this is recomended configurations:
+- Subnet mask
 - A list of information
 	- FOREACH subnet display  
 	- The first usable host address

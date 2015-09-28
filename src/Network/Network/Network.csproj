@@ -39,10 +39,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddressParser.cs" />
-    <Compile Include="AddressTypes.cs" />
     <Compile Include="Anding.cs" />
     <Compile Include="FullNetwork.cs" />
     <Compile Include="Ip Address.cs" />
+    <Compile Include="NetworkBuilder.cs" />
     <Compile Include="NetworkInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Subnetwork.cs" />

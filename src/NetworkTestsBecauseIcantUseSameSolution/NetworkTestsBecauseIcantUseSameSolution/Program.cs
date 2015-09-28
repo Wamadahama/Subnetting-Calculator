@@ -11,18 +11,10 @@ namespace NetworkTestsBecauseIcantUseSameSolution
     {
         static void Main(string[] args)
         {
-            byte[] addrArr = { 10 , 25, 5, 167 };
-            byte[] netMask = { 255, 128, 0, 0 };
-            IpAddress Ip = new IpAddress(addrArr);
-            IpAddress Sn = new IpAddress(netMask);
+            FullNetwork Network = new FullNetwork();
 
-            Ander binaryAnding = new Ander();
-
-            var Nid = binaryAnding.AndAddress(Ip, Sn);
-
-            PrintAddressInformation(Nid);
-            Console.ReadLine();
         }
+        
 
         static void PrintAddressInformation(IpAddress ip)
         {
