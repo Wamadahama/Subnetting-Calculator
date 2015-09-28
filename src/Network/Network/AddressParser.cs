@@ -74,7 +74,7 @@ namespace Network
                 {
                     AddressString += AddressArray[i].ToString();
                     // On the last iteration we do not want to add a .
-                    if (i == AddressArray.Length)
+                    if (i == AddressArray.Length-1)
                     {
                         continue;
                     }

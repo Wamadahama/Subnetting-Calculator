@@ -15,3 +15,20 @@ c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\
 c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\qualifiers.txt
 c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\qualifiers.txt.intermediate
 c:\users\elijah\documents\visual studio 2015\Projects\Network\Network\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\bin\Debug\Network.dll
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\bin\Debug\Network.pdb
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\bin\Debug\Network.pri
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\obj\Debug\Network.csprojResolveAssemblyReference.cache
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\obj\Debug\Network.dll
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\obj\Debug\Network.pdb
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\obj\Debug\priconfig.xml
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\obj\Debug\priconfig.xml.intermediate
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\obj\Debug\layout.resfiles
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\obj\Debug\layout.resfiles.intermediate
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\obj\Debug\resources.resfiles
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\obj\Debug\resources.resfiles.intermediate
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\obj\Debug\pri.resfiles
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\obj\Debug\pri.resfiles.intermediate
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\obj\Debug\qualifiers.txt
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\obj\Debug\qualifiers.txt.intermediate
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\obj\Debug\MultipleQualifiersPerDimensionFound.txt

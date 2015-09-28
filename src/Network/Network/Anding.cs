@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Network
 {
-    class Ander
+    public class Ander
     {
         public Ander()
         {
@@ -16,7 +16,7 @@ namespace Network
         public IpAddress AndAddress(IpAddress Ip, IpAddress Subnetmask)
         {
             AddressParser Parser = new AddressParser();
-            byte[] AndedAddress = new byte[3];
+            byte[] AndedAddress = new byte[4];
 
 
             for (int i = 0; i < Ip.AddressArray.Length; i++)
