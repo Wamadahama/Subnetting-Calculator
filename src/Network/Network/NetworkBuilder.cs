@@ -14,9 +14,13 @@ namespace Network
         public FullNetwork BuiltNetwork { get; set; }
         public NetworkBuilder(NetworkInfo Info)
         {
+            // Tracks what subnet needs to be built
+            int SubnetNumber;
+
             int NumberOfHostsNeeded = Info.NumberOfHosts;
             int RequiredSubnets = Info.RequiredSubnets;
             string AddressClass = DetermineNessecaryAddressClass(NumberOfHostsNeeded);
+          
         }
 
         /// <summary>
@@ -42,6 +46,12 @@ namespace Network
                 AddressClass = "C";
             }
             return AddressClass;
+        }
+
+        private List<Subnetwork> DetermineSubnets(string Class)
+        {
+            List<Subnetwork> Subnets;
+            
         }
 
         private enum AddressClass
