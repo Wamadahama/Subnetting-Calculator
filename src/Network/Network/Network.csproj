@@ -45,6 +45,7 @@
     <Compile Include="NetworkBuilder.cs" />
     <Compile Include="NetworkInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubnetBuilder.cs" />
     <Compile Include="Subnetwork.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
