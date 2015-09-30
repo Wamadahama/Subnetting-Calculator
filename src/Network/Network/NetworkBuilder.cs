@@ -48,12 +48,12 @@ namespace Network
             return AddressClass;
         }
 
-        private List<Subnetwork> DetermineSubnets(string Class)
+        private int GetAddressesPerSubnet(int numberOfHostsNeeded, string Class)
         {
-            List<Subnetwork> Subnets;
-            
-        }
+            BitCalculator Calculator = new BitCalculator(Class, numberOfHostsNeeded);
 
+        }       
+       
         private enum AddressClass
         {
             A,
