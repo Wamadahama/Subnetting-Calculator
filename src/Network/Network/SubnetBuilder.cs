@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Network
 {
-    class SubnetBuilder
+    public class SubnetBuilder
     {
         private string _Class;
         private int _SubnetNumber;
@@ -26,7 +26,7 @@ namespace Network
             Subnetwork subNetwork = new Subnetwork();
             List<IpAddress> Addresses;
             AddressParser Parser = new AddressParser();
-
+            return subNetwork;
         }
     }
 }

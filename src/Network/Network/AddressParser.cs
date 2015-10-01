@@ -7,12 +7,10 @@ using System.Net;
 
 namespace Network
 {
-
     /// <summary>
     /// Parses Ip Address strings or arrays
     /// </summary>
     /// 
-
     class AddressParser
     {
         public AddressParser() { }

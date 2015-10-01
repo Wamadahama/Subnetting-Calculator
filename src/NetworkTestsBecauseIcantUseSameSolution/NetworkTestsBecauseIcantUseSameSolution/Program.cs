@@ -13,6 +13,10 @@ namespace NetworkTestsBecauseIcantUseSameSolution
         {
             FullNetwork Network = new FullNetwork();
 
+            NetworkInfo Info = new NetworkInfo();
+            Info.NumberOfHosts = 29;
+            Info.RequiredSubnets = 8;
+            NetworkBuilder Builder = new NetworkBuilder(Info);
         }
         
 

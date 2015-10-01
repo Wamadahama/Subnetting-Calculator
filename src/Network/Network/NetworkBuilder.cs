@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Network
 {
-    class NetworkBuilder
+    public class NetworkBuilder
     {
         /// <summary>
         /// Built upon construction of the class this will contain subnet objects which will then in turn contain ip addresses
@@ -20,6 +21,7 @@ namespace Network
             int NumberOfHostsNeeded = Info.NumberOfHosts;
             int RequiredSubnets = Info.RequiredSubnets;
             string AddressClass = DetermineNessecaryAddressClass(NumberOfHostsNeeded);
+            int BitsToBorrow = DetermineBitsToBorrow(NumberOfHostsNeeded);
           
         }
 
@@ -48,10 +50,23 @@ namespace Network
             return AddressClass;
         }
 
-        private List<Subnetwork> DetermineSubnets(string Class)
+        private int DetermineBitsToBorrow(int numberOfHostsNeeded)
         {
-            List<Subnetwork> Subnets;
-            
+            // This method will use the base of two and compare it to the number of hosts needed
+            const int Base = 2;
+            int Power = 2;
+            int UsableHosts; 
+            while (true)
+            {
+
+                UsableHosts = IntPow(Base, Power);
+                Power++;
+
+                if ((UsableHosts-2) >= numberOfHostsNeeded)
+                {
+                    return UsableHosts;
+                }
+            }
         }
 
         private enum AddressClass
@@ -59,6 +74,20 @@ namespace Network
             A,
             B,
             C
+        }
+
+        [DebuggerStepThrough]
+        int IntPow(int x, int pow)
+        {
+            int ret = 1;
+            while (pow != 0)
+            {
+                if ((pow & 1) == 1)
+                    ret *= x;
+                x *= x;
+                pow >>= 1;
+            }
+            return ret;
         }
     }
 }
