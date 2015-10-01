@@ -16,7 +16,7 @@
 
         public int BitsBorrowed { get; set; }
 
-        public IpAddress SampleAddress { get;  set}
+        public IpAddress SampleAddress { get; set; }
         /// <summary>
         /// Builds the class with an array of bytes
         /// </summary>

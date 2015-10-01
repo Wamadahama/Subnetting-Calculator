@@ -9,7 +9,7 @@ namespace Network
 {
     public class NetworkBuilder
     {
-        private IpAddress SampleAddress;
+        
           
         /// <summary>
         /// Built upon construction of the class this will contain subnet objects which will then in turn contain ip addresses
@@ -18,8 +18,7 @@ namespace Network
 
         public NetworkBuilder(NetworkInfo Info)
         {
-            // Parse Sample Address
-            SampleAddress = new IpAddress(Info.SampleAddress);
+
             // Tracks what subnet needs to be built
             int SubnetNumber;
 
@@ -29,11 +28,53 @@ namespace Network
             string AddressClass = DetermineNessecaryAddressClass(NumberOfHostsNeeded);
             int BitsToBorrow = DetermineBitsToBorrow(NumberOfHostsNeeded);
 
-
             SubnetMask NetMask = GetSubnetAddress(AddressClass ,BitsToBorrow);
 
-            SubnetBuilder SubnetBuilder = new SubnetBuilder(NetMask);
+            // Parse Sample Address
+            IpAddress SampleAddress = new IpAddress(Info.SampleAddress);
+            IpAddress BaseAddress;
+            BaseAddress = ParseSampleAddress(SampleAddress, AddressClass);
+
+            // Begin the subnet building process
+            SubnetBuilder SubnetBuilder = new SubnetBuilder(NetMask, BaseAddress);
          }
+
+        /// <summary>
+        /// Parses the sample input address
+        /// </summary>
+        /// <param name="sampleAddress"></param>
+        /// <returns>IpAddress BaseAddress</returns>
+        private IpAddress ParseSampleAddress(IpAddress sampleAddress, string AddressClass)
+        {
+            
+            int NumberOfOctets = 0;
+
+            switch (AddressClass)
+            {
+                case "A":
+                    NumberOfOctets = 1;
+                    break;
+                case "B":
+                    NumberOfOctets = 2;
+                    break;
+                case "C":
+                    NumberOfOctets = 3;
+                    break;
+                default:
+                    NumberOfOctets = 3;
+                    break;
+            }
+
+            
+            byte[] addressArray = new byte[3];
+
+            for (int i = 0; i < NumberOfOctets; i++)
+            {
+                addressArray[i] = sampleAddress.AddressArray[i]; 
+            }
+
+            return new IpAddress(addressArray);
+        }
 
         /// <summary>
         /// Determines the address class that will be needed

@@ -18,7 +18,7 @@ namespace Network
         /// </summary>
         /// <param name="AddressClass"></param>
         /// <param name="SubnetNumber"></param>
-        public SubnetBuilder(SubnetMask NetMask)
+        public SubnetBuilder(SubnetMask NetMask, IpAddress BaseAddress)
         {
             _SubnetNumber = 1;
             _HostsPerSubnet = NetMask.UsableHostsPerSubnet;
