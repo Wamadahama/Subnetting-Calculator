@@ -50,7 +50,6 @@ namespace Network
             return AddressClass;
         }
 
-<<<<<<< HEAD
         private int DetermineBitsToBorrow(int numberOfHostsNeeded)
         {
             // This method will use the base of two and compare it to the number of hosts needed
@@ -69,14 +68,7 @@ namespace Network
                 }
             }
         }
-=======
-        private int GetAddressesPerSubnet(int numberOfHostsNeeded, string Class)
-        {
-            BitCalculator Calculator = new BitCalculator(Class, numberOfHostsNeeded);
->>>>>>> 663bab0b7add804824dd4d18c4f5426306ce4b92
-
-        }       
-       
+     
         private enum AddressClass
         {
             A,

@@ -24,13 +24,10 @@ namespace Network
         public Subnetwork BuildSubnet(int SubnetNumber)
         {
             Subnetwork subNetwork = new Subnetwork();
-<<<<<<< HEAD
             List<IpAddress> Addresses;
             AddressParser Parser = new AddressParser();
             return subNetwork;
-=======
 
->>>>>>> 663bab0b7add804824dd4d18c4f5426306ce4b92
         }
     }
 }
