@@ -8,8 +8,11 @@ namespace Network
 {
     public class Subnetwork
     {
-        public List<IpAddress> Addresses { get; set; }
-        public int AddressRange { get; set; }
+        public IpAddress NetworkId { get; set; }
+        public IpAddress BroadcastAddress { get; set; } 
+        public IpAddress FirstUsable { get; set; }
+        public IpAddress LastUsable { get; set; }
+
 
     }
 }

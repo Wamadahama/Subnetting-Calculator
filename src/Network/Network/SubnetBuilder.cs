@@ -15,7 +15,7 @@ namespace Network
         /// </summary>
         /// <param name="AddressClass"></param>
         /// <param name="SubnetNumber"></param>
-        public SubnetBuilder(string AddressClass, int SubnetNumber)
+        public SubnetBuilder(string AddressClass, int SubnetNumber, int BitsBorrowed)
         {
             _Class = AddressClass;
             _SubnetNumber = SubnetNumber;
@@ -24,9 +24,13 @@ namespace Network
         public Subnetwork BuildSubnet(int SubnetNumber)
         {
             Subnetwork subNetwork = new Subnetwork();
+<<<<<<< HEAD
             List<IpAddress> Addresses;
             AddressParser Parser = new AddressParser();
             return subNetwork;
+=======
+
+>>>>>>> 663bab0b7add804824dd4d18c4f5426306ce4b92
         }
     }
 }
