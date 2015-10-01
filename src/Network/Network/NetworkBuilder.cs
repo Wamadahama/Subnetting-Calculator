@@ -9,21 +9,31 @@ namespace Network
 {
     public class NetworkBuilder
     {
+        private IpAddress SampleAddress;
+          
         /// <summary>
         /// Built upon construction of the class this will contain subnet objects which will then in turn contain ip addresses
         /// </summary>
         public FullNetwork BuiltNetwork { get; set; }
+
         public NetworkBuilder(NetworkInfo Info)
         {
+            // Parse Sample Address
+            SampleAddress = new IpAddress(Info.SampleAddress);
             // Tracks what subnet needs to be built
             int SubnetNumber;
 
+            // Get the data to build the subnet mask  
             int NumberOfHostsNeeded = Info.NumberOfHosts;
             int RequiredSubnets = Info.RequiredSubnets;
             string AddressClass = DetermineNessecaryAddressClass(NumberOfHostsNeeded);
             int BitsToBorrow = DetermineBitsToBorrow(NumberOfHostsNeeded);
-          
-        }
+
+
+            SubnetMask NetMask = GetSubnetAddress(AddressClass ,BitsToBorrow);
+
+            SubnetBuilder SubnetBuilder = new SubnetBuilder(NetMask);
+         }
 
         /// <summary>
         /// Determines the address class that will be needed
@@ -50,30 +60,82 @@ namespace Network
             return AddressClass;
         }
 
+        /// <summary>
+        /// Determines the number of bits needed to borrow for based on the host counts
+        /// </summary>
+        /// <param name="numberOfHostsNeeded"></param>
+        /// <returns></returns>
         private int DetermineBitsToBorrow(int numberOfHostsNeeded)
         {
             // This method will use the base of two and compare it to the number of hosts needed
             const int Base = 2;
             int Power = 2;
-            int UsableHosts; 
+            int UsableHosts;
+            // Walks up the power to two and compares it to the hosts that are needed
             while (true)
             {
-
                 UsableHosts = IntPow(Base, Power);
-                Power++;
 
-                if ((UsableHosts-2) >= numberOfHostsNeeded)
+                if ((UsableHosts - 2) >= numberOfHostsNeeded)
                 {
-                    return UsableHosts;
+                    return Power;
                 }
+
+                Power++;
             }
         }
-     
-        private enum AddressClass
+
+        private int HostsPerSubnet(int BitsBorrowed)
         {
-            A,
-            B,
-            C
+            return (IntPow(2, BitsBorrowed) - 2);
+        }
+
+        /// <summary>
+        /// Uses the ammount of bits bowrowed to determine the subnetmask
+        /// </summary>
+        /// <returns></returns>
+        private SubnetMask GetSubnetAddress(string AddressClass, int BitsBorrowed)
+        {
+            // Use the address class to determine what the defaul subnet mask is 
+            byte[] BaseAddress;
+
+            switch (AddressClass)
+            {
+                case "A":
+                    BaseAddress = new byte[] { 255, 0, 0, 0 };
+                    break;
+                case "B":
+                    BaseAddress = new byte[] { 255, 255, 0, 0 };
+                    break;
+                case "C":
+                    BaseAddress = new byte[] { 255, 255, 255, 0 };
+                    break;
+                default:
+                    BaseAddress = new byte[] { 255, 255, 255, 0 };
+                    break;                   
+            }
+
+            int FirstIndexOfZero = Array.IndexOf(BaseAddress, 0);
+
+            // here be dragons, thou art forwarned 
+            // Dragon: There has to be a better way to do this  
+            string Octet = "";
+
+            for (int i = 0; i < BitsBorrowed; i++)
+            {
+                Octet += "1";
+            }
+
+            BaseAddress[FirstIndexOfZero] = Convert.ToByte(Octet, 2);
+
+            // Build the subnet mask object that will contain the nessecary information to build the addressing scheme
+            SubnetMask ReturnAddress = new SubnetMask(BaseAddress);
+            ReturnAddress.BitsBorrowed = BitsBorrowed;
+            ReturnAddress.UsableHostsPerSubnet = HostsPerSubnet(BitsBorrowed);
+            ReturnAddress.AddressesPerSubnet = IntPow(2, BitsBorrowed);
+
+            return ReturnAddress;
+            
         }
 
         [DebuggerStepThrough]

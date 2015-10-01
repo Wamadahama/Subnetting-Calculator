@@ -60,5 +60,13 @@ namespace Network
         {
             return this.Address;
         }
+
+        /// <summary>
+        /// If the address array is changed then the string needs to be changed and vice versa 
+        /// </summary>
+        public void UpdateAddress()
+        {
+
+        }
     }
 }

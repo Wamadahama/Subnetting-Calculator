@@ -12,22 +12,15 @@ namespace NetworkTestsBecauseIcantUseSameSolution
         static void Main(string[] args)
         {
             FullNetwork Network = new FullNetwork();
-            TestEnum test = new TestEnum();
-        }
 
-<<<<<<< HEAD
             NetworkInfo Info = new NetworkInfo();
-            Info.NumberOfHosts = 29;
+            // Deprecated
+            Info.Class = AddressClass.C;
+            Info.NumberOfHosts = 28;
             Info.RequiredSubnets = 8;
             NetworkBuilder Builder = new NetworkBuilder(Info);
-=======
-        enum TestEnum
-        {
-            A = 32,
-            B = 64,
-            C = 128
->>>>>>> 663bab0b7add804824dd4d18c4f5426306ce4b92
         }
+
 
         // Test
         static void PrintAddressInformation(IpAddress ip)

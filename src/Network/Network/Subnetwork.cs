@@ -12,7 +12,5 @@ namespace Network
         public IpAddress BroadcastAddress { get; set; } 
         public IpAddress FirstUsable { get; set; }
         public IpAddress LastUsable { get; set; }
-
-
     }
 }

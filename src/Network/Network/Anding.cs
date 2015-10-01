@@ -13,7 +13,7 @@ namespace Network
 
         }
 
-        public IpAddress AndAddress(IpAddress Ip, IpAddress Subnetmask)
+        public IpAddress AndAddress(IpAddress Ip, SubnetMask Subnetmask)
         {
             AddressParser Parser = new AddressParser();
             byte[] AndedAddress = new byte[4];

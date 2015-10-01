@@ -13,6 +13,7 @@ namespace Network
         public AddressClass Class;
         public int NumberOfHosts;
         public int RequiredSubnets;
+        public string SampleAddress;
     }
     // Used in the network info class for address classification
     public enum AddressClass
