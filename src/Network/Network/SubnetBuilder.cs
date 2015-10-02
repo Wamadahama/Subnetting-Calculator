@@ -28,18 +28,18 @@ namespace Network
         /// Returns the next subnet in the sequence
         /// </summary>
         /// <returns></returns>
-        public Subnetwork NextSubnet()
-        { 
-            Subnetwork SN = new Subnetwork();
-            Ander BinaryAnder = new Ander();
+        //public Subnetwork NextSubnet()
+        //{ 
+        //    Subnetwork SN = new Subnetwork();
+        //    Ander BinaryAnder = new Ander();
             
-            IpAddress FirstUsable;
-            IpAddress LastUsable;
-            IpAddress BroadCast;
-            IpAddress NetworkId;
+        //    IpAddress FirstUsable;
+        //    IpAddress LastUsable;
+        //    IpAddress BroadCast;
+        //    IpAddress NetworkId;
 
-            // Get the network ID
-            NetworkId = BinaryAnder.AndAddress() 
-        }
+        //    // Get the network ID
+        //    NetworkId = BinaryAnder.AndAddress(); 
+        //}
     }
 }

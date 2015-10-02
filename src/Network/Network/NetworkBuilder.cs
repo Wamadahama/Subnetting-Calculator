@@ -157,17 +157,37 @@ namespace Network
             }
 
             int FirstIndexOfZero = Array.IndexOf(BaseAddress, 0);
+            int NumberOfSubnettedOctets = 0;
 
+            if (BitsBorrowed > 16)
+            {
+                NumberOfSubnettedOctets = 3;
+            }
+            else if (BitsBorrowed > 8)
+            {
+                NumberOfSubnettedOctets = 2;
+            }
+            else
+            {
+                NumberOfSubnettedOctets = 1;
+            }
+            /// https://www.youtube.com/watch?v=J1PKpOF8oWg
+            /// Consider using a data base for this 
+           
             // here be dragons, thou art forwarned 
             // Dragon: There has to be a better way to do this  
-            string Octet = "";
-
-            for (int i = 0; i < BitsBorrowed; i++)
+            for (int x = 0; x < NumberOfSubnettedOctets; x++)
             {
-                Octet += "1";
+                string Octet = "";
+                for (int i = 0; i < BitsBorrowed; i++)
+                {
+                    Octet += "1";
+                }
+
+                BaseAddress[FirstIndexOfZero + x] = Convert.ToByte(Octet, 2);
             }
 
-            BaseAddress[FirstIndexOfZero] = Convert.ToByte(Octet, 2);
+            //BaseAddress[FirstIndexOfZero] = Convert.ToByte(Octet, 2);
 
             // Build the subnet mask object that will contain the nessecary information to build the addressing scheme
             SubnetMask ReturnAddress = new SubnetMask(BaseAddress);
