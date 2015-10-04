@@ -174,6 +174,7 @@ namespace Network
             /// https://www.youtube.com/watch?v=J1PKpOF8oWg
             /// Consider using a data base for this 
            
+           
             // here be dragons, thou art forwarned 
             // Dragon: There has to be a better way to do this  
             for (int x = 0; x < NumberOfSubnettedOctets; x++)
