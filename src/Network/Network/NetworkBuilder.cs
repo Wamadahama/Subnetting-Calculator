@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using Newtonsoft.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -171,24 +173,15 @@ namespace Network
             {
                 NumberOfSubnettedOctets = 1;
             }
-            /// https://www.youtube.com/watch?v=J1PKpOF8oWg
-            /// Consider using a data base for this 
-           
-           
-            // here be dragons, thou art forwarned 
-            // Dragon: There has to be a better way to do this  
-            for (int x = 0; x < NumberOfSubnettedOctets; x++)
-            {
-                string Octet = "";
-                for (int i = 0; i < BitsBorrowed; i++)
-                {
-                    Octet += "1";
-                }
 
-                BaseAddress[FirstIndexOfZero + x] = Convert.ToByte(Octet, 2);
-            }
 
-            //BaseAddress[FirstIndexOfZero] = Convert.ToByte(Octet, 2);
+            // Use json to get the subnet.
+            StreamReader FileReader = new StreamReader("SubnetData\\" + AddressClass + ".json");
+            dynamic JsonData = JsonConvert.DeserializeObject(FileReader.ReadToEnd());
+
+            byte[] AddressArray = new byte[3];
+            AddressArray = JsonData[BitsBorrowed.ToString()];
+            SubnetMask ReturnSubnet = new SubnetMask(AddressArray);     
 
             // Build the subnet mask object that will contain the nessecary information to build the addressing scheme
             SubnetMask ReturnAddress = new SubnetMask(BaseAddress);
