@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace Network
 {
@@ -155,7 +156,7 @@ namespace Network
                     break;
                 default:
                     BaseAddress = new byte[] { 255, 255, 255, 0 };
-                    break;                   
+                    break;
             }
 
             int FirstIndexOfZero = Array.IndexOf(BaseAddress, 0);
@@ -175,13 +176,18 @@ namespace Network
             }
 
 
-            // Use json to get the subnet.
-            StreamReader FileReader = new StreamReader("SubnetData\\" + AddressClass + ".json");
-            dynamic JsonData = JsonConvert.DeserializeObject(FileReader.ReadToEnd());
+            // Use json to get the subnet
+            // Absolutely astonished that I cant use system.io.file
+            var assembly = typeof(IpAddress).GetTypeInfo().Assembly;
+            string[] Resources = assembly.GetManifestResourceNames();
+            Stream fileStream = assembly.GetManifestResourceStream("SubnetData\\" + AddressClass + ".json");
+            StreamReader Reader = new StreamReader(fileStream);
+            string contents = Reader.ReadToEnd();
+            dynamic JsonData = JsonConvert.DeserializeObject(contents);
 
             byte[] AddressArray = new byte[3];
             AddressArray = JsonData[BitsBorrowed.ToString()];
-            SubnetMask ReturnSubnet = new SubnetMask(AddressArray);     
+            SubnetMask ReturnSubnet = new SubnetMask(AddressArray);
 
             // Build the subnet mask object that will contain the nessecary information to build the addressing scheme
             SubnetMask ReturnAddress = new SubnetMask(BaseAddress);
@@ -190,7 +196,7 @@ namespace Network
             ReturnAddress.AddressesPerSubnet = IntPow(2, BitsBorrowed);
 
             return ReturnAddress;
-            
+
         }
 
         [DebuggerStepThrough]
