@@ -51,9 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="SubnetData\A.json" />
-    <None Include="SubnetData\B.json" />
-    <None Include="SubnetData\C.json" />
+    <EmbeddedResource Include="SubnetData\A.json" />
+    <EmbeddedResource Include="SubnetData\B.json" />
+    <EmbeddedResource Include="SubnetData\C.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

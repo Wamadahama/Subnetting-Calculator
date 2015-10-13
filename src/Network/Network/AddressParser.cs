@@ -31,7 +31,7 @@ namespace Network
             // Count number of periods for a simple way to check if it is a valid ip address
             int OctetCount = AddressString.Count(f => f == '.');
 
-            if (OctetCount == 4)
+            if (OctetCount == 3)
             {
                 // Build array of ints
                 string[] OctetArray = AddressString.Split('.');

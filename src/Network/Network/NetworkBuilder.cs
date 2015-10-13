@@ -180,14 +180,18 @@ namespace Network
             // Absolutely astonished that I cant use system.io.file
             var assembly = typeof(IpAddress).GetTypeInfo().Assembly;
             string[] Resources = assembly.GetManifestResourceNames();
-            Stream fileStream = assembly.GetManifestResourceStream("SubnetData\\" + AddressClass + ".json");
+            Stream fileStream = assembly.GetManifestResourceStream("Network.SubnetData." + AddressClass + ".json");
             StreamReader Reader = new StreamReader(fileStream);
             string contents = Reader.ReadToEnd();
             dynamic JsonData = JsonConvert.DeserializeObject(contents);
 
-            byte[] AddressArray = new byte[3];
-            AddressArray = JsonData[BitsBorrowed.ToString()];
-            SubnetMask ReturnSubnet = new SubnetMask(AddressArray);
+            string AddressString = "";
+            AddressString = JsonData[BitsBorrowed.ToString()];
+            SubnetMask ReturnSubnet = new SubnetMask(AddressString);
+
+            //byte[] AddressArray = new byte[3];
+            //AddressArray = (byte[])JsonData[BitsBorrowed.ToString()];
+            //SubnetMask ReturnSubnet = new SubnetMask(AddressArray);
 
             // Build the subnet mask object that will contain the nessecary information to build the addressing scheme
             SubnetMask ReturnAddress = new SubnetMask(BaseAddress);
