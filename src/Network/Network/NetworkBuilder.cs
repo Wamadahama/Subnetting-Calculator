@@ -187,14 +187,9 @@ namespace Network
 
             string AddressString = "";
             AddressString = JsonData[BitsBorrowed.ToString()];
-            SubnetMask ReturnSubnet = new SubnetMask(AddressString);
-
-            //byte[] AddressArray = new byte[3];
-            //AddressArray = (byte[])JsonData[BitsBorrowed.ToString()];
-            //SubnetMask ReturnSubnet = new SubnetMask(AddressArray);
 
             // Build the subnet mask object that will contain the nessecary information to build the addressing scheme
-            SubnetMask ReturnAddress = new SubnetMask(BaseAddress);
+            SubnetMask ReturnAddress = new SubnetMask(AddressString);
             ReturnAddress.BitsBorrowed = BitsBorrowed;
             ReturnAddress.UsableHostsPerSubnet = HostsPerSubnet(BitsBorrowed);
             ReturnAddress.AddressesPerSubnet = IntPow(2, BitsBorrowed);

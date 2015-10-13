@@ -11,7 +11,8 @@ namespace Network
         private string _Class;
         private int _SubnetNumber;
         private int _HostsPerSubnet;
-        private int _SampleAddress;
+        private IpAddress _SampleAddress;
+        private IpAddress _Netmask;
 
         /// <summary>
         /// Initialization of the Class variable nessecary for building the subnet
@@ -22,6 +23,8 @@ namespace Network
         {
             _SubnetNumber = 1;
             _HostsPerSubnet = NetMask.UsableHostsPerSubnet;
+            _SampleAddress = BaseAddress;
+
         }
 
         /// <summary>
@@ -29,17 +32,8 @@ namespace Network
         /// </summary>
         /// <returns></returns>
         //public Subnetwork NextSubnet()
-        //{ 
-        //    Subnetwork SN = new Subnetwork();
-        //    Ander BinaryAnder = new Ander();
-            
-        //    IpAddress FirstUsable;
-        //    IpAddress LastUsable;
-        //    IpAddress BroadCast;
-        //    IpAddress NetworkId;
+        //{
 
-        //    // Get the network ID
-        //    NetworkId = BinaryAnder.AndAddress(); 
         //}
     }
 }

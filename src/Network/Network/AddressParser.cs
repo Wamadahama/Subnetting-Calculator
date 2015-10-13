@@ -23,7 +23,7 @@ namespace Network
         public byte[] TryParse(string AddressString)
         {
             // 4 octets of the ip address
-            byte[] AddressArray = new byte[3];
+            byte[] AddressArray = new byte[4];
 
             // Cleanup the input address
             AddressString = AddressString.Trim();
