@@ -38,16 +38,17 @@
     <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddressParser.cs" />
-    <Compile Include="Anding.cs" />
-    <Compile Include="FullNetwork.cs" />
-    <Compile Include="Ip Address.cs" />
-    <Compile Include="NetworkBuilder.cs" />
-    <Compile Include="NetworkInfo.cs" />
+    <Compile Include="Tools\AddressParser.cs" />
+    <Compile Include="Tools\Anding.cs" />
+    <Compile Include="Builders\ClassAandBBuilders.cs" />
+    <Compile Include="Network Structures\FullNetwork.cs" />
+    <Compile Include="Network Structures\Ip Address.cs" />
+    <Compile Include="Builders\NetworkBuilder.cs" />
+    <Compile Include="Network Structures\NetworkInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SubnetBuilder.cs" />
-    <Compile Include="SubnetMask.cs" />
-    <Compile Include="Subnetwork.cs" />
+    <Compile Include="Builders\ClassCSubnetBuilder.cs" />
+    <Compile Include="Network Structures\SubnetMask.cs" />
+    <Compile Include="Network Structures\Subnetwork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
