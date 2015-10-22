@@ -55,11 +55,11 @@ namespace Network
                     // Gather network information for Class C
                     int SubnetCount = 0; 
                     // Begin the subnet building process
-                    ClassCSubnetBuilder SubnetBuilder = new ClassCSubnetBuilder(NetMask, SampleAddress);
+                    ClassCSubnetBuilder ClassCBuilder = new ClassCSubnetBuilder(NetMask, SampleAddress);
                     
                     while (SubnetCount < RequiredSubnets)
                     {
-                        BuiltNetwork.Subnets.Add(SubnetBuilder.NextSubnet());
+                        BuiltNetwork.Subnets.Add(ClassCBuilder.NextSubnet());
                     }
                     break;
                 default:

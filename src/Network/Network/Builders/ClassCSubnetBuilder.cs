@@ -34,6 +34,13 @@ namespace Network
         /// <returns></returns>
         public Subnetwork NextSubnet()
         {
+            // Will be returned to the network buidler class
+            Subnetwork ReturnNetwork = new Subnetwork();
+
+            int lastUsable = _HostsPerSubnet * _SubnetNumber;
+            int broadCastAddress = lastUsable + 1;
+            int subnetId = broadCastAddress - lastUsable;
+            int firstUsable = subnetId + 1;
 
         }
 
