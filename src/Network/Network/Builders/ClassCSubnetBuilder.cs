@@ -36,7 +36,7 @@ namespace Network
         {
             // Will be returned to the network buidler class
             Subnetwork ReturnNetwork = new Subnetwork();
-
+            byte[] BaseAddress = _SampleAddress.AddressArray;
             int lastUsable = _HostsPerSubnet * _SubnetNumber;
             int broadCastAddress = lastUsable + 1;
             int subnetId = broadCastAddress - lastUsable;
