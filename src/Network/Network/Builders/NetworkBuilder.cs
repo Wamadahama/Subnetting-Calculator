@@ -13,12 +13,12 @@ namespace Network
 {
     public class NetworkBuilder
     {
-        
-          
+
+
         /// <summary>
         /// Built upon construction of the class this will contain subnet objects which will then in turn contain ip addresses
         /// </summary>
-        public FullNetwork BuiltNetwork { get; set; }
+        public FullNetwork BuiltNetwork;
 
         public NetworkBuilder(NetworkInfo Info)
         {
@@ -44,22 +44,26 @@ namespace Network
             switch (InetClass)
             {
                 case AddressClass.A:
+                    BuiltNetwork = new FullNetwork();
                     // Gather network informatio for Class A 
                     ClassAandBBuilder ClassABuilder = new ClassAandBBuilder();
                     break;
                 case AddressClass.B:
+                    BuiltNetwork = new FullNetwork();
                     ClassAandBBuilder ClassBBuilder = new ClassAandBBuilder();
                     // Gather network information for Class B
                     break;
                 case AddressClass.C:
                     // Gather network information for Class C
-                    int SubnetCount = 0; 
+                    int SubnetCount = 0;
+                    BuiltNetwork = new FullNetwork();
                     // Begin the subnet building process
                     ClassCSubnetBuilder ClassCBuilder = new ClassCSubnetBuilder(NetMask, SampleAddress);
-                    
+
                     while (SubnetCount < RequiredSubnets)
                     {
-                        BuiltNetwork.Subnets.Add(ClassCBuilder.NextSubnet());
+                        var Subnet = ClassCBuilder.NextSubnet();
+                        BuiltNetwork.Subnets.Add(Subnet);
                     }
                     break;
                 default:

@@ -15,10 +15,10 @@ namespace NetworkTestsBecauseIcantUseSameSolution
 
             NetworkInfo Info = new NetworkInfo();
             // Deprecated
-            Info.Class = AddressClass.B;
-            Info.NumberOfHosts = 288;
+            Info.Class = AddressClass.B; // Deprecated 
+            Info.NumberOfHosts = 30;
             Info.RequiredSubnets = 8;
-            Info.SampleAddress = "172.16.0.0";
+            Info.SampleAddress = "192.168.5.23";
             NetworkBuilder Builder = new NetworkBuilder(Info);
         }
 

@@ -51,3 +51,5 @@ C:\Users\eellis\Documents\GitHub\Subnetting-Calculator\src\Network\Network\obj\D
 C:\Users\eellis\Documents\GitHub\Subnetting-Calculator\src\Network\Network\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\eellis\Documents\GitHub\Subnetting-Calculator\src\Network\Network\bin\Debug\Newtonsoft.Json.dll
 C:\Users\eellis\Documents\GitHub\Subnetting-Calculator\src\Network\Network\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Elijah\Desktop\Subnetting-Calculator\src\Network\Network\bin\Debug\Newtonsoft.Json.xml

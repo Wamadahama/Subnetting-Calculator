@@ -8,6 +8,12 @@ namespace Network
 {
     public class FullNetwork
     {
-        public List<Subnetwork> Subnets { get; set; }
+        private List<Subnetwork> Subnets { get; set; }
+
+        public FullNetwork()
+        {
+            // Maybe a queue
+            Subnets = new List<Subnetwork>();
+        }
     }
 }
