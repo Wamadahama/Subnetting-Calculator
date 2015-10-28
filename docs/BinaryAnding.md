@@ -1,4 +1,4 @@
-<strong>Story: </strong>Binary anding calculator
+# <strong>Story: </strong>Binary anding calculator
 
 State of the story: Done
 
@@ -20,5 +20,5 @@ This is the only code that I currently have stuff for, it can be found on the wi
 	<li><strike>Classify how the anding works</strike></li>
 	<li><strike>Make the user interface scalable so it works well on all platforms</strike></li>
 	<li><strike>Follow the IPO process</strike></li>
-	<li>Test the anding</li>
+	<li><strike>Test the anding</strike></li>
 </ul>

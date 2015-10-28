@@ -1,27 +1,10 @@
-<strong>Story: </strong>Subnetting scheme generator
+# Story: Subnetting scheme backend
 
-Status: In the works
+Description: Build a back end that can development subnetting schemes for Class C addresses and provide information for Class A and B. For time constraint I will not be implementing Class A and B subnet building. But I plan on adding this down the road
 
-This will be used to determine a collection of information that is used in subnetting.
+## Story points
 
-
-This will take the following information:
-- Address class
-- Number of subnets needed
-- Number of hosts needed per subnet
-
-With this information it will determine the following, this is recomended configurations:
-- Subnet mask
-- A list of information
-	- FOREACH subnet display  
-	- The first usable host address
-	- The last usable host address
-	- Broadcast address
-
-<h5>Story points</h5>
-<ul>
-	<li>Build a class that works with computing this information</li>
-	<li>Build the interface with the ability to display the address information for each subnet</li>
-<ul>
-
-Future features - VLSM
+- <strike>Develop back end</strike>
+- <strike>Develop logic for Class C subnetting</strike>
+- Develop logic for Class A and B subnetting
+- Test
