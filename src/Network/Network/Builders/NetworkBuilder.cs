@@ -47,7 +47,7 @@ namespace Network
                     BuiltNetwork = new FullNetwork();
                     // Gather network informatio for Class A 
                     ClassAandBBuilder ClassABuilder = new ClassAandBBuilder();
-                    break;que
+                    break;
                 case AddressClass.B:
                     BuiltNetwork = new FullNetwork();
                     ClassAandBBuilder ClassBBuilder = new ClassAandBBuilder();
@@ -62,6 +62,7 @@ namespace Network
 
                     while (SubnetCount < RequiredSubnets)
                     {
+                        SubnetCount += 1;
                         var Subnet = ClassCBuilder.NextSubnet();
                         BuiltNetwork.Subnets.Enqueue(Subnet);
                     }
