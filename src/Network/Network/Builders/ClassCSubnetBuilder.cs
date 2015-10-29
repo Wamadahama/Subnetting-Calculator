@@ -40,9 +40,10 @@ namespace Network
             byte[] BaseAddress = _SampleAddress.AddressArray;
 
             // Calculate the nessecary information to build the IPs on the subnet
-            byte lastUsable = Convert.ToByte(_HostsPerSubnet * _SubnetNumber);
+            byte lastUsable = Convert.ToByte(_HostsPerSubnet * _SubnetNumber - 2);
             byte broadCastAddress = Convert.ToByte(lastUsable + 1);
-            byte subnetId = Convert.ToByte(broadCastAddress - lastUsable - 1);
+            // The subnet ID here is a special case because it requires math using subtraction 
+            byte subnetId = Convert.ToByte(Math.Abs(_HostsPerSubnet - broadCastAddress - 1));
             byte firstUsable = Convert.ToByte(subnetId + 1);
 
             // TODO: Possibly refactor this section by using the BaseAddress away, but I am scared that it might mutate the contents of the array inproperly 
@@ -70,6 +71,8 @@ namespace Network
             IpAddress LastUsable = new IpAddress(LastUsuableArray);
             ReturnNetwork.LastUsable = LastUsable;
 
+            // Increment the subnet number for the next calculation
+            _SubnetNumber += 1;
             return ReturnNetwork;
         }
 

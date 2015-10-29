@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Network;
+using NetworkTests.Tools;
 
-namespace NetworkTestsBecauseIcantUseSameSolution
+namespace NetworkTests
 {
     class Program
     {
@@ -16,10 +17,14 @@ namespace NetworkTestsBecauseIcantUseSameSolution
             NetworkInfo Info = new NetworkInfo();
             // Deprecated
             Info.Class = AddressClass.B; // Deprecated 
-            Info.NumberOfHosts = 30;
-            Info.RequiredSubnets = 8;
+            Info.NumberOfHosts = 126;
+            Info.RequiredSubnets = 2;
             Info.SampleAddress = "192.168.5.23";
             NetworkBuilder Builder = new NetworkBuilder(Info);
+
+            SubnetDataWriter Datawriter = new SubnetDataWriter();
+            Datawriter.WriteSubnetData(Builder.BuiltNetwork);
+            Datawriter.WriteOutExcelDocument(Builder.BuiltNetwork);
         }
 
 

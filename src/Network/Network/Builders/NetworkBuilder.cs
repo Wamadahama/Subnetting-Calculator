@@ -45,7 +45,7 @@ namespace Network
             {
                 case AddressClass.A:
                     BuiltNetwork = new FullNetwork();
-                    // Gather network informatio for Class A 
+                    // Gather network information for Class A 
                     ClassAandBBuilder ClassABuilder = new ClassAandBBuilder();
                     break;
                 case AddressClass.B:
@@ -59,7 +59,7 @@ namespace Network
                     BuiltNetwork = new FullNetwork();
                     // Begin the subnet building process
                     ClassCSubnetBuilder ClassCBuilder = new ClassCSubnetBuilder(NetMask, SampleAddress);
-
+                    // Subtraction by one because it is a based of zero 
                     while (SubnetCount < RequiredSubnets)
                     {
                         SubnetCount += 1;
@@ -127,9 +127,9 @@ namespace Network
             }
         }
 
-        private int HostsPerSubnet(int BitsBorrowed)
+        private int AddressesPerSubnet(int BitsBorrowed)
         {
-            return (IntPow(2, BitsBorrowed) - 2);
+            return (IntPow(2, BitsBorrowed));
         }
 
         /// <summary>
@@ -174,22 +174,26 @@ namespace Network
             //}
 
 
-            // Use json to get the subnet
-            // Absolutely astonished that I cant use system.io.file
+            // Get local resource dictionary 
             var assembly = typeof(IpAddress).GetTypeInfo().Assembly;
             string[] Resources = assembly.GetManifestResourceNames();
+
+            // Load resources based on address class
             Stream fileStream = assembly.GetManifestResourceStream("Network.SubnetData." + AddrClass.ToString() + ".json");
             StreamReader Reader = new StreamReader(fileStream);
+
+            // Parse json from resources 
             string contents = Reader.ReadToEnd();
             dynamic JsonData = JsonConvert.DeserializeObject(contents);
 
+            // Determine Address class
             string AddressString = "";
             AddressString = JsonData[BitsBorrowed.ToString()];
 
             // Build the subnet mask object that will contain the nessecary information to build the addressing scheme
             SubnetMask ReturnAddress = new SubnetMask(AddressString);
             ReturnAddress.BitsBorrowed = BitsBorrowed;
-            ReturnAddress.UsableHostsPerSubnet = HostsPerSubnet(BitsBorrowed);
+            ReturnAddress.UsableHostsPerSubnet = AddressesPerSubnet(BitsBorrowed);
             ReturnAddress.AddressesPerSubnet = IntPow(2, BitsBorrowed);
 
             return ReturnAddress;
