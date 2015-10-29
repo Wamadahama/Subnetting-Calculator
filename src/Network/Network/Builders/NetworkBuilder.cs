@@ -159,20 +159,6 @@ namespace Network
             }
 
             int FirstIndexOfZero = Array.IndexOf(BaseAddress, 0);
-            //int NumberOfSubnettedOctets;
-            //if (BitsBorrowed > 16)
-            //{
-            //    NumberOfSubnettedOctets = 3;
-            //}
-            //else if (BitsBorrowed > 8)
-            //{
-            //    NumberOfSubnettedOctets = 2;
-            //}
-            //else
-            //{
-            //    NumberOfSubnettedOctets = 1;
-            //}
-
 
             // Get local resource dictionary 
             var assembly = typeof(IpAddress).GetTypeInfo().Assembly;

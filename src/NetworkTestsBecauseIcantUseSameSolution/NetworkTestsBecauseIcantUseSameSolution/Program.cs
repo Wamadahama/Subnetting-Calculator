@@ -17,7 +17,7 @@ namespace NetworkTests
             NetworkInfo Info = new NetworkInfo();
             // Deprecated
             Info.Class = AddressClass.B; // Deprecated 
-            Info.NumberOfHosts = 126;
+            Info.NumberOfHosts = 14;
             Info.RequiredSubnets = 2;
             Info.SampleAddress = "192.168.5.23";
             NetworkBuilder Builder = new NetworkBuilder(Info);

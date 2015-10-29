@@ -42,14 +42,29 @@ namespace Network
             // Calculate the nessecary information to build the IPs on the subnet
             byte lastUsable = Convert.ToByte(_HostsPerSubnet * _SubnetNumber - 2);
             byte broadCastAddress = Convert.ToByte(lastUsable + 1);
+
+            // HORRID HACK
+            // I am Elijah Ellis Please remember my name as I may not 
             // The subnet ID here is a special case because it requires math using subtraction 
-            byte subnetId = Convert.ToByte(Math.Abs(_HostsPerSubnet - broadCastAddress - 1));
+            byte subnetId;
+
+            if (_SubnetNumber == 1)
+            {
+                // I am sorry mom 
+
+                subnetId = 0;
+            }
+            else
+            {
+                subnetId = Convert.ToByte(Math.Abs(_HostsPerSubnet - broadCastAddress - 1));
+            }
+
             byte firstUsable = Convert.ToByte(subnetId + 1);
 
             // TODO: Possibly refactor this section by using the BaseAddress away, but I am scared that it might mutate the contents of the array inproperly 
             // Build Subnet ID and attach it to the return network
             byte[] NetworkIdArray = BaseAddress;
-            NetworkIdArray[3] = firstUsable;
+            NetworkIdArray[3] = subnetId;
             IpAddress NetworkID = new IpAddress(NetworkIdArray);
             ReturnNetwork.NetworkId = NetworkID;
 
