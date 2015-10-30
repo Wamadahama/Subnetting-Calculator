@@ -68,7 +68,7 @@ namespace NetworkTests.Tools
         /// </summary>
         /// <param name="Network"></param>
         /// <param name="Path"></param>
-        public void WriteOutExcelDocument(FullNetwork Network)
+        public void WriteOutExcelDocument(FullNetwork Network, string FileName)
         {
             // Build data table from the Network
             DataTable Table = new DataTable();
@@ -90,7 +90,7 @@ namespace NetworkTests.Tools
 
             XLWorkbook wb = new XLWorkbook();
             wb.Worksheets.Add(Table, "Subnet Data");
-            wb.SaveAs("subnetdata.xlsx");
+            wb.SaveAs( FileName + ".xlsx");
         }
     }
 }
