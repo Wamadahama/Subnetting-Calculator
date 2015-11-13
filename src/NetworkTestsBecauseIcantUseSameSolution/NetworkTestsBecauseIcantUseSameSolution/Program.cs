@@ -80,6 +80,14 @@ namespace NetworkTests
             Builder = new NetworkBuilder(Info);
 
             Datawriter.WriteOutExcelDocument(Builder.BuiltNetwork, "2-64");
+
+            Info = new NetworkInfo();
+            Info.NumberOfHosts = 15;
+            Info.RequiredSubnets = 12;
+            Info.SampleAddress = "192.168.3.2";
+            Builder = new NetworkBuilder(Info);
+
+            Datawriter.WriteOutExcelDocument(Builder.BuiltNetwork, "Test");
         }
 
 

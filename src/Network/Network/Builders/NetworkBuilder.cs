@@ -26,13 +26,20 @@ namespace Network
             // Get the nessecary data to build the subnetting information 
 
             int NumberOfHostsNeeded = Info.NumberOfHosts;
-            int RequiredSubnets = Info.RequiredSubnets;
+            
             
             // The nessecary address class for the number of subnets and the required hosts per subnet 
             AddressClass InetClass = DetermineNessecaryAddressClass(NumberOfHostsNeeded);
 
-            // Uses 2^x to determine how many bits need to be bowwrows
+            // Uses 2^x to determine how many bits need to be borrowed
             int BitsToBorrow = DetermineBitsToBorrow(NumberOfHostsNeeded);
+
+            int RequiredSubnets = DetermineNumberOfSubnets(BitsToBorrow, InetClass);
+
+            if (RequiredSubnets == -1) 
+            {
+                // TO DO error handling
+            }
 
             // Gets the subnet mask using data resources basedo n the required bits to borrow 
             SubnetMask NetMask = GetSubnetAddress(InetClass, BitsToBorrow);
@@ -127,6 +134,35 @@ namespace Network
             }
         }
 
+        private int DetermineNumberOfSubnets(int BitsBorrowed, AddressClass Class)
+        {
+            // For clarity
+            const int BITS_PER_SUBNET = 32;
+
+
+            // Determine the number of subnets that will be needed by taking the ammount of bits in a full mask (32), then
+            // subtracting it by the base ammount of bits in that subnet:
+            // - Class A = 8
+            // - Class B = 16
+            // - Class C = 24
+            // Then subtracting it by the number of bits borrowed and returning the power of it 
+            int bitsLeft = 0;
+
+            switch (Class)
+            {
+                case AddressClass.A:
+                    bitsLeft = (BITS_PER_SUBNET - 8) - BitsBorrowed;
+                    return IntPow(2, bitsLeft);
+                case AddressClass.B:
+                    bitsLeft = (BITS_PER_SUBNET - 16) - BitsBorrowed;
+                    return IntPow(2, bitsLeft);
+                case AddressClass.C:
+                    bitsLeft = (BITS_PER_SUBNET - 24) - BitsBorrowed;
+                    return IntPow(2, bitsLeft);
+                default:
+                    return -1;
+            }
+        }
         private int AddressesPerSubnet(int BitsBorrowed)
         {
             return (IntPow(2, BitsBorrowed));
