@@ -25,7 +25,7 @@ namespace NetworkTests
             Builder = new NetworkBuilder(Info);
 
             SubnetDataWriter Writer = new SubnetDataWriter();
-            Writer.WriteOutExcelDocument(Builder.BuiltNetwork, "waite");            
+            Writer.WriteOutExcelDocument(Builder.BuiltNetwork, "Test");            
             //// Deprecated
             //Info.Class = AddressClass.B; // Deprecated 
             //Info.NumberOfHosts = 14;
