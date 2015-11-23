@@ -8,5 +8,11 @@ namespace Network.Builders
 {
     public class ClassAandBBuilder
     {
+        public SubnetMask NetMask;
+        public int HostsPerSubnet { get; set; }
+        public int NumberOfSubents { get; set; }
+
+        public ClassAandBBuilder() { }
+
     }
 }

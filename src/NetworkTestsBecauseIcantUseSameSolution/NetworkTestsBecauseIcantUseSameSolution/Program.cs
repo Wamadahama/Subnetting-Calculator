@@ -19,8 +19,8 @@ namespace NetworkTests
             NetworkBuilder Builder;
             
             Info = new NetworkInfo();
-            Info.NumberOfHosts = 30;
-            Info.RequiredSubnets = 8;
+            Info.NumberOfHosts = 2046;
+            Info.RequiredSubnets = 32;
             Info.SampleAddress = "172.16.2.5";
             Builder = new NetworkBuilder(Info);
 
