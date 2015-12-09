@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using Subnetting_Windows_Desktop.BranchPages;
 
 namespace Subnetting_Windows_Desktop
 {
@@ -29,6 +30,27 @@ namespace Subnetting_Windows_Desktop
         private void Tile_Click(object sender, RoutedEventArgs e)
         {
             // Tile Click Logic Here 
+        }
+
+        private void SubnettingCalculatorTile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BinaryAndingTile_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CidrPrefixCalculatorTile_Click(object sender, RoutedEventArgs e)
+        {
+            CIDRCalculator Window = new CIDRCalculator();
+            Window.Show();   
+        }
+
+        private void AddressConverterTile_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

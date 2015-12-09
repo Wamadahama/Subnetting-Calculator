@@ -1,4 +1,4 @@
-﻿<Controls:MetroWindow x:Class="Subnetting_Windows_Desktop.MainWindow"
+﻿<Controls:MetroWindow x:Name="MainMenu" x:Class="Subnetting_Windows_Desktop.MainWindow"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
@@ -45,20 +45,20 @@
 
         </Grid.ColumnDefinitions>
 
-        <Controls:Tile Title="Subnetting Calculator" 
-                    Width="Auto" Height="Auto" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="12">
+        <Controls:Tile x:Name="SubnettingCalculatorTile" Title="Subnetting Calculator" 
+                    Width="Auto" Height="Auto" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="12" Click="SubnettingCalculatorTile_Click">
         </Controls:Tile>
 
-        <Controls:Tile Title="Binary Anding" 
-                    Width="Auto" Height="Auto" Grid.Column="5" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="12">
+        <Controls:Tile x:Name="BinaryAndingTile" Title="Binary Anding" 
+                    Width="Auto" Height="Auto" Grid.Column="5" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="12" Click="BinaryAndingTile_Click">
         </Controls:Tile>
 
-        <Controls:Tile Title="CIDR Prefix Calculator" 
-                    Width="Auto" Height="Auto" Grid.Column="9" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="12">
+        <Controls:Tile x:Name="CidrPrefixCalculatorTile" Title="CIDR Prefix Calculator" 
+                    Width="Auto" Height="Auto" Grid.Column="9" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="12" Click="CidrPrefixCalculatorTile_Click">
         </Controls:Tile>
 
-        <Controls:Tile Title="Address Converter" 
-                    Width="Auto" Height="Auto" Grid.Column="13" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="12">
+        <Controls:Tile x:Name="AddressConverterTile" Title="Address Converter" 
+                    Width="Auto" Height="Auto" Grid.Column="13" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="12" Click="AddressConverterTile_Click">
         </Controls:Tile>
 
     </Grid>
