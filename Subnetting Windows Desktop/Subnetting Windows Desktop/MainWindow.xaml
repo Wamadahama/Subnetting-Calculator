@@ -3,10 +3,69 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
                       Title="Subnetting Calculator" 
-                      Height="350" 
-                      Width="525">
+                      Height="200" 
+                      Width="1000"
+                      >
+    <Grid HorizontalAlignment="Stretch" Height="Auto" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Controls:Tile Title="Subnetting Calculator" 
+                    Width="Auto" Height="Auto" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="12">
+        </Controls:Tile>
+
+        <Controls:Tile Title="Binary Anding" 
+                    Width="Auto" Height="Auto" Grid.Column="5" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="12">
+        </Controls:Tile>
+
+        <Controls:Tile Title="CIDR Prefix Calculator" 
+                    Width="Auto" Height="Auto" Grid.Column="9" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="12">
+        </Controls:Tile>
+
+        <Controls:Tile Title="Address Converter" 
+                    Width="Auto" Height="Auto" Grid.Column="13" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="12">
+        </Controls:Tile>
+
+    </Grid>
 
     <!-- your content here -->
+
+
 
 </Controls:MetroWindow>
 
