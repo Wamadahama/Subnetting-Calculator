@@ -49,6 +49,8 @@
     <Compile Include="Builders\ClassCSubnetBuilder.cs" />
     <Compile Include="Network Structures\SubnetMask.cs" />
     <Compile Include="Network Structures\Subnetwork.cs" />
+    <Compile Include="Tools\CidrParser.cs" />
+    <Compile Include="Tools\ExcelDataWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

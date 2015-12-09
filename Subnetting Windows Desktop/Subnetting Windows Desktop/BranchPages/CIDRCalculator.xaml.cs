@@ -11,6 +11,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Network;
+using Network.Tools;
+using System.Text.RegularExpressions;
 
 namespace Subnetting_Windows_Desktop.BranchPages
 {
@@ -22,11 +25,33 @@ namespace Subnetting_Windows_Desktop.BranchPages
         public CIDRCalculator()
         {
             InitializeComponent();
+            CidrInputBox.Focus();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void CidrInputBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            string RawInput;
+            RawInput = CidrInputBox.Text.Trim();
+
+            // CIDR regex 
+            string pattern = @"\/[0-9]{1,2}";
+            Regex rgx = new Regex(pattern, RegexOptions.IgnoreCase);
+
+            if (rgx.IsMatch(RawInput) == true)
+            {
+                CidrParser Parser = new CidrParser();
+                string OutputString = Parser.ParseCidr(RawInput);
+                CidrOutputBox.Text = OutputString;
+            }
+            else
+            {
+                CidrOutputBox.Text = "";
+            }
         }
     }
 }

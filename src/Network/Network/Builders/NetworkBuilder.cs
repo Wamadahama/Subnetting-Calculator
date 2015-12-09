@@ -86,7 +86,7 @@ namespace Network
                     while (SubnetCount < RequiredSubnets)
                     {
                         SubnetCount += 1;
-                        var Subnet = ClassCBuilder.NextSubnet();
+                        Subnetwork Subnet = ClassCBuilder.NextSubnet();
                         BuiltNetwork.Subnets.Enqueue(Subnet);
                     }
                     break;
