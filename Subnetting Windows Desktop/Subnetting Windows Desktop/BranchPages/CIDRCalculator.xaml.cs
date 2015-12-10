@@ -44,6 +44,7 @@ namespace Subnetting_Windows_Desktop.BranchPages
 
             if (rgx.IsMatch(RawInput) == true)
             {
+                // Call the Network.CidrParser() to parse the CIDR
                 CidrParser Parser = new CidrParser();
                 string OutputString = Parser.ParseCidr(RawInput);
                 CidrOutputBox.Text = OutputString;
