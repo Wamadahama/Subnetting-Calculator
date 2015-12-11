@@ -27,7 +27,16 @@ namespace Network.Tools
 
             // Get the number of octets
             int OctetCount = BitCount / 8;
-            int RemainingBits = BitCount % 8;
+            int RemainingBits;
+            if (BitCount < 8)
+            {
+                RemainingBits = BitCount % 8;
+            }
+            else
+            {
+                RemainingBits = BitCount;
+            }
+            
 
             byte[] AddressArray = new byte[4];
 
