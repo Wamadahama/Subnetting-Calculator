@@ -29,11 +29,11 @@ namespace Network.Tools
             int OctetCount = BitCount / 8;
             int RemainingBits = BitCount % 8;
 
-            byte[] AddressArray = new byte[3];
+            byte[] AddressArray = new byte[4];
 
             // <= because atleast one will always be 255
             int i;
-            for (i = 0; i <= OctetCount; i++)
+            for (i = 0; i < OctetCount; i++)
             {
                 AddressArray[i] = 255;
             }
@@ -54,8 +54,8 @@ namespace Network.Tools
 
                 AddressArray[i] = (byte)Convert.ToInt32(OctetString, 2);
             }
-            string SubnetString = System.Text.Encoding.UTF8.GetString(AddressArray, 0, AddressArray.Length);
-            return SubnetString;
+            IpAddress NewAddress = new IpAddress(AddressArray);
+            return NewAddress.Address;
         }
 
         [DebuggerStepThrough]
