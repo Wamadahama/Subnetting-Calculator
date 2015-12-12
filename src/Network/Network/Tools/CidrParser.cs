@@ -21,50 +21,66 @@ namespace Network.Tools
         /// <returns></returns>
         public string ParseCidr(string CidrString)
         {
-            // Get the number of bits borrowed 
-            CidrString = CidrString.Trim('/');
-            int BitCount = int.Parse(CidrString);
+            int CidrValue = 0;
+            // Trim and parse input 
+            bool isValidNumber = int.TryParse(CidrString.Trim('/'), out CidrValue);
 
-            // Get the number of octets
-            int OctetCount = BitCount / 8;
-            int RemainingBits;
-            if (BitCount < 8)
+            int BitCount;
+            int FullOctetCount = 0;
+
+
+            if (isValidNumber)
             {
-                RemainingBits = BitCount % 8;
+                // if it is >/7 then we only need the bit count
+                if (CidrValue < 8)
+                {
+                    BitCount = CidrValue;
+                }
+                else
+                {
+                    // Gets the ammount of populated octets and the ammount of bits in the next octet 
+                    FullOctetCount = CidrValue / 8;
+                    BitCount = CidrValue % 8;
+                }
+
+                byte [] AddressArray = new byte[4];
+
+                int ZeroCount = 8 - BitCount;
+
+                // Declared on the outside because I need to know what octet it ended on
+                int OctetIterator = 0;
+                for (OctetIterator = 0; OctetIterator < FullOctetCount; OctetIterator++)
+                {
+                    AddressArray[OctetIterator] = 255;
+                }
+
+                // Build the binary for the last octet if the bit count is > 0
+                // There has got to be a better way to build a binary string
+                if (BitCount > 0)
+                {
+                    string BinaryString = "";
+                    for (int i = 0; i < BitCount; i++)
+                    {
+                        BinaryString += "1";
+                    }
+
+                    for (int i = 0; i < ZeroCount; i++)
+                    {
+                        BinaryString += "0";
+
+                    }
+
+                    AddressArray[OctetIterator] = (byte)Convert.ToInt32(BinaryString, 2);
+                }
+
+                IpAddress ReturnAddress = new IpAddress(AddressArray);
+                return ReturnAddress.ToString();
+
             }
             else
             {
-                RemainingBits = BitCount;
+                return "Invalid CIDR notation";
             }
-            
-
-            byte[] AddressArray = new byte[4];
-
-            // <= because atleast one will always be 255
-            int i;
-            for (i = 0; i < OctetCount; i++)
-            {
-                AddressArray[i] = 255;
-            }
-
-            if (RemainingBits > 0)
-            {
-                string OctetString = "";
-                int ZerosCount = 8 - RemainingBits;
-                for (int x = 0; x < RemainingBits-1; x++)
-                {
-                    OctetString += "1";
-                }
-
-                for (int x = 0; x < ZerosCount-1; x++)
-                {
-                    OctetString += "0";
-                }
-
-                AddressArray[i] = (byte)Convert.ToInt32(OctetString, 2);
-            }
-            IpAddress NewAddress = new IpAddress(AddressArray);
-            return NewAddress.Address;
         }
 
         [DebuggerStepThrough]
