@@ -50,7 +50,8 @@ namespace Subnetting_Windows_Desktop
 
         private void AddressConverterTile_Click(object sender, RoutedEventArgs e)
         {
-
+            AddressConverter Window = new AddressConverter();
+            Window.Show();
         }
     }
 }

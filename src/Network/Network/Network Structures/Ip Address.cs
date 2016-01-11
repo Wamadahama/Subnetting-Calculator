@@ -51,16 +51,29 @@ namespace Network
         /// Takes an array and builds the object with the array
         /// </summary>
         /// <param name="IpArray"></param>
-       public IpAddress(byte[] IpArray)
-       {
-            this.AddressArray = IpArray; 
-            this.Address = Parser.TryParse(IpArray);
-       }
+        public IpAddress(byte[] IpArray)
+        {
+             this.AddressArray = IpArray; 
+             this.Address = Parser.TryParse(IpArray);
+        }
+       
+        /// <summary>
+        /// Returns a string represntation of the ip address
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return this.Address;
         }
 
+        /// <summary>
+        /// Returns a binary string repesentation of the ip address
+        /// </summary>
+        /// <returns></returns>
+        public string ToBinaryString()
+        {
+
+        }
         /// <summary>
         /// If the address array is changed then the string needs to be changed and vice versa 
         /// </summary>
