@@ -38,6 +38,7 @@ namespace Network
 
                 for (int i = 0; i < OctetArray.Length; i++)
                     AddressArray[i] = byte.Parse(OctetArray[i]);
+
                 return AddressArray;
             }
             else

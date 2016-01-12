@@ -72,7 +72,32 @@ namespace Network
         /// <returns></returns>
         public string ToBinaryString()
         {
+            string ReturnString = "";
 
+            // Convert to binary
+            foreach (byte octet in AddressArray)
+            {
+                ReturnString += Convert.ToString(octet, 2) + ".";
+            }
+
+            return ReturnString.TrimEnd('.');
+
+        }
+        /// <summary>
+        /// Returns a binary string array representation of the ip address
+        /// </summary>
+        /// <returns></returns>
+        public string[] ToBinaryStringArray()
+        {
+            string[] ReturnString = new string[3];
+
+            // Convert to binary
+            for (int i = 0; i < AddressArray.Length; i++)
+            {
+                ReturnString[i] += Convert.ToString(AddressArray[i], 2);
+            }
+
+            return ReturnString;
         }
         /// <summary>
         /// If the address array is changed then the string needs to be changed and vice versa 

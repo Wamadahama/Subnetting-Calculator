@@ -36,8 +36,16 @@ namespace Subnetting_Windows_Desktop.BranchPages
 
             if (rgx.IsMatch(RawInput) == true)
             {
-                IpAddress Address = new IpAddress(RawInput);
-                BinaryIpAddressTextBox.Text = Address.ToString();
+                try
+                {
+                    IpAddress Address = new IpAddress(RawInput);
+                    BinaryIpAddressTextBox.Text = Address.ToBinaryString();
+                }
+                catch (Exception)
+                {
+
+                    BinaryIpAddressTextBox.Text = "Invalid Address";
+                }
             }
             else
             {
