@@ -48,6 +48,7 @@ namespace Network
             SubnetMask NetMask = GetSubnetAddress(InetClass, BitsToBorrow, AddressSpaceBits);
             IpAddress SampleAddress = new IpAddress(Info.SampleAddress);
 
+
             // The program has different functionallity based on different address class
             // For Class C it will be able to build the entire subnet out
             // For the other classes it will display generic subnetting information but not build a subnet 
@@ -56,19 +57,33 @@ namespace Network
                 case AddressClass.A:
                     BuiltNetwork = new FullNetwork();
                     // Gather network information for Class A 
-                    ClassAandBBuilder ClassABuilder = new ClassAandBBuilder();
-                    ClassABuilder.NetMask = NetMask;
-                    ClassABuilder.HostsPerSubnet = IntPow(2, (AddressSpaceBits - 2) );
-                    ClassABuilder.NumberOfSubents = IntPow(2, BitsToBorrow);
-                    BuiltNetwork.ClassAorBBuilder = ClassABuilder;
+                    //ClassAandBBuilder ClassABuilder = new ClassAandBBuilder();
+                    //ClassABuilder.NetMask = NetMask;
+                    //ClassABuilder.HostsPerSubnet = IntPow(2, (AddressSpaceBits - 2) );
+                    //ClassABuilder.NumberOfSubents = IntPow(2, BitsToBorrow);
+                    //BuiltNetwork.ClassAorBBuilder = ClassABuilder;
+                    BuiltNetwork = new FullNetwork();
+                    BuiltNetwork.BitsBorrowed = BitsToBorrow;
+                    BuiltNetwork.Class = InetClass;
+                    BuiltNetwork.NetMask = NetMask;
+                    BuiltNetwork.NumberOfSubnets = IntPow(2, BitsToBorrow);
+                    BuiltNetwork.AddressSpace = IntPow(2, AddressSpaceBits);
+                    BuiltNetwork.UsableHosts = IntPow(2, AddressSpaceBits) - 2;
                     break;
                 case AddressClass.B:
+                    //BuiltNetwork = new FullNetwork();
+                    //ClassAandBBuilder ClassBBuilder = new ClassAandBBuilder();
+                    //ClassBBuilder.NetMask = NetMask;
+                    //ClassBBuilder.HostsPerSubnet = IntPow(2, AddressSpaceBits);
+                    //ClassBBuilder.NumberOfSubents = IntPow(2, BitsToBorrow);
+                    //BuiltNetwork.ClassAorBBuilder = ClassBBuilder;
                     BuiltNetwork = new FullNetwork();
-                    ClassAandBBuilder ClassBBuilder = new ClassAandBBuilder();
-                    ClassBBuilder.NetMask = NetMask;
-                    ClassBBuilder.HostsPerSubnet = IntPow(2, AddressSpaceBits);
-                    ClassBBuilder.NumberOfSubents = IntPow(2, BitsToBorrow);
-                    BuiltNetwork.ClassAorBBuilder = ClassBBuilder;
+                    BuiltNetwork.BitsBorrowed = BitsToBorrow;
+                    BuiltNetwork.Class = InetClass;
+                    BuiltNetwork.NetMask = NetMask;
+                    BuiltNetwork.NumberOfSubnets = IntPow(2, BitsToBorrow);
+                    BuiltNetwork.AddressSpace = IntPow(2, AddressSpaceBits);
+                    BuiltNetwork.UsableHosts = IntPow(2, AddressSpaceBits) - 2;
                     break;
                 case AddressClass.C:
                     // Gather network information for Class C
@@ -83,6 +98,14 @@ namespace Network
                         Subnetwork Subnet = ClassCBuilder.NextSubnet();
                         BuiltNetwork.Subnets.Enqueue(Subnet);
                     }
+
+                    BuiltNetwork.BitsBorrowed = BitsToBorrow;
+                    BuiltNetwork.Class = InetClass;
+                    BuiltNetwork.NetMask = NetMask;
+                    BuiltNetwork.NumberOfSubnets = IntPow(2, BitsToBorrow);
+                    BuiltNetwork.AddressSpace = (IntPow(2, AddressSpaceBits) * BuiltNetwork.NumberOfSubnets);
+                    BuiltNetwork.UsableHosts = IntPow(2, AddressSpaceBits) - 2;
+
                     break;
                 default:
                     break;

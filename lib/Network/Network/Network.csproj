@@ -36,7 +36,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Extensions\Extensions.cs" />
-    <Compile Include="Output\ExcelSubnetWriter.cs" />
     <Compile Include="Tools\AddressParser.cs" />
     <Compile Include="Tools\Anding.cs" />
     <Compile Include="Builders\ClassAandBBuilders.cs" />

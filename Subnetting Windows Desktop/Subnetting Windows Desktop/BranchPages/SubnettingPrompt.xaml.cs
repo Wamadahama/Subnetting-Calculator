@@ -33,11 +33,13 @@ namespace Subnetting_Windows_Desktop.BranchPages
                 Info.RequiredSubnets = int.Parse(RequiredSubnetsTextBox.Text);
                 Info.SampleAddress = SampleAddressTextBox.Text;
                 NetworkBuilder Builder = new NetworkBuilder(Info);
+                SubnettingOutput Window = new SubnettingOutput(Builder.BuiltNetwork);
+                Window.Show();
+
             }
             catch (Exception)
             {
                 MessageBox.Show("There was an error parsing your information");
-                throw;
             }
 
         }

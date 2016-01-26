@@ -23,13 +23,15 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Label Grid.Column="1" Grid.ColumnSpan="3" Content="Subnetting Information" FontSize="16"></Label>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="5" FontSize="9.5" Margin="12,27,10,0">Please note that the ammount of nessecary subnets will always<LineBreak></LineBreak> take precedence over the ammount of hosts needed</TextBlock>
 
-        <Label Grid.Row="1" Content="Number of hosts" Grid.ColumnSpan="2" Margin="12,0,0,0"></Label>
-        <TextBox x:Name="NumberOfHostsTextBox" Grid.Row="1"  Grid.ColumnSpan="2" Margin="12,24,0,0"></TextBox>
 
-        <Label Grid.Row="2" Content="Required Subnets" Grid.ColumnSpan="2" Margin="12,0,0,0"></Label>
-        <TextBox x:Name="RequiredSubnetsTextBox" Grid.Row="2" Grid.ColumnSpan="2" Margin="12,24,0,0"></TextBox>
-
+        <Label Grid.Row="1" Content="Required Subnets" Grid.ColumnSpan="2" Margin="12,0,0,0"></Label>
+        <TextBox x:Name="RequiredSubnetsTextBox" Grid.Row="1" Grid.ColumnSpan="2" Margin="12,24,0,0"></TextBox>
+        
+        <Label Grid.Row="2" Content="Number of hosts" Grid.ColumnSpan="2" Margin="12,0,0,0"></Label>
+        <TextBox x:Name="NumberOfHostsTextBox" Grid.Row="2"  Grid.ColumnSpan="2" Margin="12,24,0,0"></TextBox>
+        
         <Label Grid.Row="3" Content="Sample Address" Grid.ColumnSpan="2" Margin="12,0,0,0"></Label>
         <TextBox x:Name="SampleAddressTextBox" Grid.Row="3" Grid.ColumnSpan="4" Margin="12,24,0,0" ></TextBox>
 
