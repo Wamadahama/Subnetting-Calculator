@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Network;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -77,7 +78,24 @@ namespace Network
             // Convert to binary
             foreach (byte octet in AddressArray)
             {
-                ReturnString += Convert.ToString(octet, 2) + ".";
+                string OctetString = Convert.ToString(octet, 2);
+
+                // If the octet isn't 8 characters then prepend the nessecary ammount of zeros to it 
+                if (OctetString.Length < 8)
+                {
+                    int ZeroCount = 8 - OctetString.Length;
+                    string PrependString = "";
+
+                    // See Extentions
+                    ZeroCount.Times(() => PrependString += "0");
+
+                    // Prepends the string and append a period
+                    OctetString = OctetString.Insert(0, PrependString);
+
+                }
+
+                OctetString += ".";
+                ReturnString += OctetString;
             }
 
             return ReturnString.TrimEnd('.');
@@ -106,5 +124,7 @@ namespace Network
         {
 
         }
+
     }
 }
+

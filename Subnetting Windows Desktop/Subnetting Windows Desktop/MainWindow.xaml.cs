@@ -34,7 +34,8 @@ namespace Subnetting_Windows_Desktop
 
         private void SubnettingCalculatorTile_Click(object sender, RoutedEventArgs e)
         {
-
+            Subnetting Window = new Subnetting();
+            Window.Show();
         }
 
         private void BinaryAndingTile_Click(object sender, RoutedEventArgs e)

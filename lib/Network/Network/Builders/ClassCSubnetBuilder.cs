@@ -25,7 +25,6 @@ namespace Network
             // We are casting to a byte here because for class A and class B the count will be greater than 255, but in every other case it will be <255
             _HostsPerSubnet = NetMask.UsableHostsPerSubnet;
             _SampleAddress = BaseAddress;
-
         }
 
 

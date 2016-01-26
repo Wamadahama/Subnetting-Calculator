@@ -44,12 +44,6 @@ namespace Network
 
             int RequiredSubnets = IntPow(2, BitsToBorrow);
 
-
-            if (RequiredSubnets == -1) 
-            {
-                // TO DO error handling
-            }
-
             // Gets the subnet mask using data resources basedo n the required bits to borrow 
             SubnetMask NetMask = GetSubnetAddress(InetClass, BitsToBorrow, AddressSpaceBits);
             IpAddress SampleAddress = new IpAddress(Info.SampleAddress);

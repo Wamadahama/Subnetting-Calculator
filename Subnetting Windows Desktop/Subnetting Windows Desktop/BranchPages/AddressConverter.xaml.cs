@@ -23,6 +23,7 @@ namespace Subnetting_Windows_Desktop.BranchPages
         public AddressConverter()
         {
             InitializeComponent();
+            DecimalIpAddressTextBox.Focus();
         }
 
         private void DecimalIpAddressTextBox_KeyUp(object sender, KeyEventArgs e)
