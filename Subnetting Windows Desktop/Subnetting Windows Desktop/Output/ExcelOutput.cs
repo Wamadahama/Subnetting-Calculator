@@ -11,11 +11,11 @@ namespace Subnetting_Windows_Desktop.Output
 {
     class ExcelSubnetWriter
     {
-        /// Unpacks and writes out the FullNetwork file
+        /// Unpacks and writes out the FullNetwork file, returns the filepath 
         /// </summary>
         /// <param name="Network"></param>
         /// <param name="Path"></param>
-        public void WriteOutExcelDocument(FullNetwork Network, string FileName)
+        public string WriteOutExcelDocument(FullNetwork Network, string FileName)
         {
             // Build data table from the Network
             DataTable Table = new DataTable();
@@ -36,9 +36,13 @@ namespace Subnetting_Windows_Desktop.Output
                 Table.Rows.Add(Row);
             }
 
+            string FilePath = FileName + ".xlsx";
+
             XLWorkbook wb = new XLWorkbook();
             wb.Worksheets.Add(Table, "Subnet Data");
-            wb.SaveAs(FileName + ".xlsx");
+            wb.SaveAs(FilePath);
+
+            return FilePath;
         }
     }
 }

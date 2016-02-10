@@ -35,7 +35,6 @@ namespace Subnetting_Windows_Desktop.BranchPages
                 NetworkBuilder Builder = new NetworkBuilder(Info);
                 SubnettingOutput Window = new SubnettingOutput(Builder.BuiltNetwork);
                 Window.Show();
-
             }
             catch (Exception)
             {

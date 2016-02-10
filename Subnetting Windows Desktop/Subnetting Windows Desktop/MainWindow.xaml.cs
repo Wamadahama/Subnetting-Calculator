@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using Subnetting_Windows_Desktop.BranchPages;
+using System.IO;
 
 namespace Subnetting_Windows_Desktop
 {
@@ -25,6 +26,23 @@ namespace Subnetting_Windows_Desktop
         public MainWindow()
         {
             InitializeComponent();
+            CleanExcelDocuments();
+        }
+
+        private void CleanExcelDocuments()
+        {
+            string[] ExcelFiles = Directory.GetFiles(".", "*.xlsx");
+            foreach (string ExcelFile in ExcelFiles)
+            {
+                try
+                {
+                    File.Delete(ExcelFile);
+                }
+                catch (Exception)
+                {
+                }
+                
+            }
         }
 
         private void Tile_Click(object sender, RoutedEventArgs e)

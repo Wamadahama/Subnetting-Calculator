@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Subnetting_Windows_Desktop.BranchPages"
         mc:Ignorable="d"
-        Title="SubnettingOutput" Height="500" Width="300">
+        Title="Subnetting Output" Height="500" Width="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -43,7 +43,7 @@
         <Label Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="8" Content="Subnet Mask"></Label>
         <TextBox x:Name="SubnetMaskTextBox" IsEnabled="False" Grid.Row="3" Grid.ColumnSpan="8" Margin="0,24,0,0"></TextBox>
 
-        <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="8" Content="Address Space"></Label>
+        <Label Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="8" Content="Total Address Space"></Label>
         <TextBox x:Name="AddressSpaceTextBox"  IsEnabled="False" Grid.Row="4" Grid.ColumnSpan="8" Margin="0,24,0,0"></TextBox>
 
         <Label Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="8" Content="Bits Borrowed"></Label>
@@ -55,6 +55,8 @@
         <Label Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="8" Content="Usable Hosts Per Subnet"></Label>
         <TextBox x:Name="UsableHostsPerSubnetTextBox" IsEnabled="False" Grid.Row="7" Grid.ColumnSpan="8" Margin="0,24,0,0"></TextBox>
 
-        <Button x:Name="ExitButton" Grid.Row="8" Grid.Column="2" Grid.ColumnSpan="6" Content="Exit" Margin="10" Click="ExitButton_Click"></Button>
+        <Button x:Name="ExportToExcelButton" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="8" Content="Export to Excel" Margin="10" Click="ExportToExcelButton_Click" Background="#FF207347" BorderBrush="#FF207347" Foreground="White" BorderThickness="1" Controls:ButtonHelper.CornerRadius="0">
+        </Button>
+        <Button x:Name="ExitButton" Grid.Row="9" Grid.Column="2" Grid.ColumnSpan="6" Content="Exit" Margin="10" Click="ExitButton_Click" IsCancel="True"></Button>
     </Grid>
 </Controls:MetroWindow>

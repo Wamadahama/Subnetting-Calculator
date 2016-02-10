@@ -60,10 +60,18 @@ namespace Network
             // Validate address array by checking for nulls 
             for (int i = 0; i < AddressArray.Length; i++)
             {
-                if (AddressArray[i] == null || AddressArray[i] > 255)
+                try
                 {
-                    validAddress = false;
+                    if (AddressArray[i] > 255)
+                    {
+                        validAddress = false;
+                    }
                 }
+                catch (Exception)
+                {
+                    validAddress = false;  
+                }
+
             }
 
             if (validAddress)
