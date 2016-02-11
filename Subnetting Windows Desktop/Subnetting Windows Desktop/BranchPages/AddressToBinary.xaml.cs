@@ -16,11 +16,11 @@ using Network;
 namespace Subnetting_Windows_Desktop.BranchPages
 {
     /// <summary>
-    /// Interaction logic for AddressConverter.xaml
+    /// Interaction logic for AddressToBinary.xaml
     /// </summary>
-    public partial class AddressConverter  
+    public partial class AddressToBinary  
     {
-        public AddressConverter()
+        public AddressToBinary()
         {
             InitializeComponent();
             DecimalIpAddressTextBox.Focus();

@@ -38,7 +38,8 @@ namespace Subnetting_Windows_Desktop.BranchPages
             }
             catch (Exception)
             {
-                MessageBox.Show("There was an error parsing your information");
+                Helpers.MessageBox MessageBox = new Helpers.MessageBox("There was an error parsing your information");
+                MessageBox.Show();
             }
 
         }

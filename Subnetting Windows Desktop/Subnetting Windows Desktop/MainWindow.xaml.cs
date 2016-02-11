@@ -58,7 +58,8 @@ namespace Subnetting_Windows_Desktop
 
         private void BinaryAndingTile_Click(object sender, RoutedEventArgs e)
         {
-
+            BinaryAnding Window = new BinaryAnding();
+            Window.Show();
         }
 
         private void CidrPrefixCalculatorTile_Click(object sender, RoutedEventArgs e)
@@ -69,7 +70,7 @@ namespace Subnetting_Windows_Desktop
 
         private void AddressConverterTile_Click(object sender, RoutedEventArgs e)
         {
-            AddressConverter Window = new AddressConverter();
+            AddressToBinary Window = new AddressToBinary();
             Window.Show();
         }
     }

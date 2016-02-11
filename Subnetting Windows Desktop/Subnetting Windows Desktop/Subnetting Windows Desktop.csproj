@@ -76,7 +76,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="BranchPages\AddressConverter.xaml">
+    <Page Include="BranchPages\AddressToBinary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BranchPages\BinaryAnding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -92,6 +96,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Helpers\MessageBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -100,8 +108,11 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BranchPages\AddressConverter.xaml.cs">
-      <DependentUpon>AddressConverter.xaml</DependentUpon>
+    <Compile Include="BranchPages\AddressToBinary.xaml.cs">
+      <DependentUpon>AddressToBinary.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BranchPages\BinaryAnding.xaml.cs">
+      <DependentUpon>BinaryAnding.xaml</DependentUpon>
     </Compile>
     <Compile Include="BranchPages\CIDRCalculator.xaml.cs">
       <DependentUpon>CIDRCalculator.xaml</DependentUpon>
@@ -111,6 +122,9 @@
     </Compile>
     <Compile Include="BranchPages\SubnettingPrompt.xaml.cs">
       <DependentUpon>SubnettingPrompt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\MessageBox.xaml.cs">
+      <DependentUpon>MessageBox.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

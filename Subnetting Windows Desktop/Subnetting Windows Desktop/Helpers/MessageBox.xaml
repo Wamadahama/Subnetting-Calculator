@@ -1,0 +1,27 @@
+﻿<Controls:MetroWindow  x:Class="Subnetting_Windows_Desktop.Helpers.MessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Subnetting_Windows_Desktop.Helpers"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="" Height="150" Width="300" ResizeMode="NoResize" Topmost="True" WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="OutputLabel" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" FontFamily="Open Sans" FontSize="18"></Label>
+        <Button x:Name="ExitButton" Grid.Row="2" Grid.Column="4" Margin="10,10,10,4" Content="Close" Click="ExitButton_Click"></Button>
+
+    </Grid>
+</Controls:MetroWindow>
