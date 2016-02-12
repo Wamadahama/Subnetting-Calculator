@@ -20,7 +20,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Label x:Name="OutputLabel" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" FontFamily="Open Sans" FontSize="18"></Label>
+        <Label x:Name="OutputLabel" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" FontFamily="Open Sans" FontSize="12"></Label>
         <Button x:Name="ExitButton" Grid.Row="2" Grid.Column="4" Margin="10,10,10,4" Content="Close" Click="ExitButton_Click"></Button>
 
     </Grid>
