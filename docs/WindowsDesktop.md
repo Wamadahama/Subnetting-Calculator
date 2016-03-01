@@ -6,7 +6,7 @@ Description of story:
 
 <h4>Story points </h4>
 <ul>
-  <li>Build interface</li>
-  <li>"wire up" to back end</li>
-  <li>debug</li>
+  <strike><li>Build interface</li></strike>
+  <strike><li>"wire up" to back end</li></strike>
+  <strike><li>Debug</li></strike>
 </ul>

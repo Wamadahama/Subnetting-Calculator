@@ -7,9 +7,8 @@ Main features of the application:
 
 1.	Binary anding calculator
 2.	Subnet scheme generator
-3.	Ping tool
-4.	Link aggregation
-5.	Interface
+3.	Interface
+
 
 - These features will all be broken down into different story points.
 

@@ -6,5 +6,5 @@ Description: Build a back end that can development subnetting schemes for Class 
 
 - <strike>Develop back end</strike>
 - <strike>Develop logic for Class C subnetting</strike>
-- Develop logic for Class A and B subnetting
-- Test
+- <strike>Develop logic for Class A and B subnetting</strike>
+- <strike>Test</strike>

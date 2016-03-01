@@ -7,6 +7,6 @@ Description of story:
 
 <h4>Story points </h4>
 <ul>
-  <li>Build interface</li>
-  <li>debug</li>
+  <s><li>Build interface</li><s>
+  <s><li>debug</li><s>
 </ul>
