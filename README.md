@@ -7,13 +7,13 @@ Subnetting calculator for windows desktop
 This repository contains the code that is used by the windows desktop application Subnetting-Calculator
 
 ## Project Structure
-```assets\ ``` -> Contains Media used by application
+```assets\ ``` => Contains Media used by application
 
-```docs\``` -> Contains project documentation
+```docs\``` => Contains project documentation
 
-```lib\``` -> Contains the backend of the project which is a class library that contains code that is used to calculate various Subnetting information
+```lib\``` => Contains the backend of the project which is a class library that contains code that is used to calculate various Subnetting information
 
-```Subnetting Windows Desktop\``` -> Contains a WPF project using the Network.dll from lib to interface with the backend of the project
+```Subnetting Windows Desktop\``` => Contains a WPF project using the Network.dll from lib to interface with the backend of the project
 
 ---
 # Background
@@ -50,10 +50,9 @@ First clone the repository
 
 ---
 # Future
-In the future I plan on adding some features
+In the future I plan on adding some features, and maybe windows phone support 
 - Link Aggregation
 - Wild card mask calculation
 - Binary, Hex, and Decimal converter
 - Ping tool
-- Windows phone support 
 ---
