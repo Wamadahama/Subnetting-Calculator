@@ -24,11 +24,11 @@ I am writing this application because the set of tools that are contained in the
 
 
 ---
-# Install
+# Install #
 
 Use a prexisting binary in ```Subnetting Windows Desktop\bin\Release\```
-
 or compile the project
+
 ---
 # Compiling
 
@@ -55,4 +55,6 @@ In the future I plan on adding some features, and maybe windows phone support
 - Wild card mask calculation
 - Binary, Hex, and Decimal converter
 - Ping tool
+
+
 ---
