@@ -55,6 +55,6 @@ In the future I plan on adding some features, and maybe windows phone support
 - Wild card mask calculation
 - Binary, Hex, and Decimal converter
 - Ping tool
-
+- Something that takes a subnet mask and tells you the avaliable host addresses / subnetworks 
 
 ---
